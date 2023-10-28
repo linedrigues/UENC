@@ -1,11 +1,20 @@
-const mysql = require('mysql/promise');
+const mysql = require('mysql2/promise');
+console.log(this.mysql);
 
-const connection = mysql.createpool({
-    host: 'localhost',
-    port: 3308,
-    user: 'root',
-    password: 'root',
-    database: 'sakila',
+var mysql2 = require('mysql2');
+var connection2 = mysql2.createConnection({
+  host     : 'http://br818.teste.website/~uniaoe08',
+  user     : 'admin',
+  password : 'x2YgWvDNV3bD4uQ',
+  database : 'uniaoe08_UENC',
 });
 
+const connection = mysql.createPool({
+    host: 'http://br818.teste.website/~uniaoe08',
+    port: 3306,
+    user: 'admin',
+    password: 'x2YgWvDNV3bD4uQ',
+    database: 'uniaoe08_UENC',
+});
+console.log(this.connection);
 module.exports = connection;
