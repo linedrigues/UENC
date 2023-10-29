@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "UENC"
+  "defaultProject": "UENC",
+  "cli": {
+    "analytics": "86d8712c-604e-4f4a-927a-c9d35bfbabcb"
+  }
 }
