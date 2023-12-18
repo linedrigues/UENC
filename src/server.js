@@ -1,15 +1,26 @@
-const express = require ('express');
-const allItems = require('./allItems');
 
-const app = express();
 
-app.use(express.json);
+// Import the express function
+const express = require('express')
+const app = express()
 
-const PORT = 4200;
+// Define middleware for all routes
+app.use((request, response, next) => {
+    console.log(request)
+    next()
+})
 
-app.listen(4200, () => {console.log('Funcionando na porta ' + PORT)});
+// Define route for GET request on path '/'
+//app.get('/', (request, response) => {
+//response.send('response for GET request');
+//});
 
-app.get('/', async (req, res) => {
+app.get('/', async (request, response) => {
     const query = await allItems();
-    return res.status(201).json(query);
+    return response.status(201).json(query);
 });
+
+// Start the server on port 3000
+app.listen(
+    3000,
+    () => console.log(`Server listening on port 3000.`));
