@@ -1,12 +1,31 @@
+<div class="container mt-4">
+    <div class="mt-4 p-5 bg-primary text-white rounded">
+        <h1>União espiritualista Nossa Casa</h1>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a [routerLink]="['/cadastrarLogin']" class="navbar-brand">Cadastrar Login</a>
+</nav>
+
+
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/cadastroLogin">Cadastro Login</a></li>
+    </ul>
+</nav>
+
 <div class="d-flex justify-content-center align-items-center">
     <div class="card p-3">
 
         <form [formGroup]="form" (ngSubmit)="login()">
             <div class="form-group">
 
-                <label for="email">E-mail</label>
+                <label for="usuario">Usuário</label>
 
-                <input type="email" id="email" class="form-control" formControlName="email" requiredminlength="5">
+                <input type="usuario" id="usuario" class="form-control" formControlName="usuario" requiredminlength="5">
 
             </div>
 
@@ -17,7 +36,7 @@
                 <input type="password" id="senha" class="form-control" formControlName="senha" requiredminlength="8">
 
             </div>
-
+<br>
             <button class="btn btn-success" type="submit" [disabled]="!form.valid">Entrar</button>
 
             

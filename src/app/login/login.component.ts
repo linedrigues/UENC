@@ -11,9 +11,9 @@ export class LoginComponent implements OnInit {
 
   emailDB: string = "email@teste.com";
 
-senhaDB: string = "12345678";
+  senhaDB: string = "12345678";
 
-mensagem: string;
+  mensagem: string;
 
   constructor() { }
 
@@ -21,17 +21,15 @@ mensagem: string;
   }
 
 
-  login()
-
-  {
+  login() {
 
     if (this.form.get('email').value == this.emailDB && this.form.get('senha').value == this.senhaDB) {
 
-        this.mensagem = "Login feito com sucesso!";
+      this.mensagem = "Login feito com sucesso!";
 
     } else {
 
-      this.mensagem = "E-mail ou a senha estar errado!"; 
+      this.mensagem = "E-mail ou a senha estar errado!";
 
     }
 
